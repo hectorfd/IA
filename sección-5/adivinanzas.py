@@ -8,7 +8,7 @@ while True:
     if number != riddles:
         print('Try again...')
         count += 1
-        clue = 'To low ➡️' if number < riddles else 'To high ⬅️'
+        clue = 'Too low ➡️' if number < riddles else 'Too high ⬅️'
         print(clue)
     else:
         print('Congratulations! You guessed the number.')
