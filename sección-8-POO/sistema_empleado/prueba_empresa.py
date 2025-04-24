@@ -11,4 +11,7 @@ company.add_employees('Maria', 'Contabilidad')
 
 # imprimimos el numero de empleados por departamento
 
-print(f'\tEL numero de empleados del departamento Contabilidad: {company.get_number_employees("Contabilidad")}')
+print(f'\tThe number of employees inContabilidad is: {company.get_number_employees("Contabilidad")}')
+
+
+company.show_total_employees()

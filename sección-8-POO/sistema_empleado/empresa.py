@@ -9,6 +9,7 @@ class Empresa:
     # esta es una relacion de agregacion y composicion entre Empresa y Empleado
     def add_employees(self, name_employee, department):# esta funcion agregara un empleado a la lista de empleados
         worker = Empleado(name_employee, department)# se crea un objeto gracias a la instanciacion de la clase Empleado
+        
         self.list_employees.append(worker)# con esto se agrega el objeto al atributo list_employees
         
     def get_number_employees(self, department):# esta funcion devolvera el numero de empleados por departamento
@@ -17,3 +18,11 @@ class Empresa:
             if i.department == department:
                 count_by_department += 1
         return count_by_department
+    
+    def show_total_employees(self):
+        print(f'Total employees: {len(self.list_employees)} of the company: {self.name_company}')
+        for i in self.list_employees:
+            print(f'ID:{i.id_employee}\n\tName:{i.name_employee}\n\tDepartment: {i.department}')
+            
+
+    
