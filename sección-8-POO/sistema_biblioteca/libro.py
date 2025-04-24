@@ -14,6 +14,12 @@ class Libro:
         return self.author
     def get_gender(self):
         return self.gender
+    # tambien en ves de getters  podemos usar la etiqueta property
+    # pero es algo que veremos en proximos sistemas tambien usaremos atributos protegidos ya que
+    # hasta el momento no hemos visto attributos privados
+    # @property
+    # def title(self):
+    #     return self.title
     
     # necesitamos una etiqueta de method para count_id
     @classmethod
