@@ -1,7 +1,7 @@
 class Empleado:
     count_employees = 0 # es un atributo de clase
-    def __init__(self, name, department):
-        self.name = name
+    def __init__(self, name_employee, department):
+        self.name_employee = name_employee
         self.department = department
         Empleado.count_employees += 1 # se usa antes Empleado para referirse a la clase
         
