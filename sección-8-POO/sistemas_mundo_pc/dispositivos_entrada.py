@@ -12,6 +12,8 @@ class Ratones(DispositivoEntrada):
     @classmethod
     def get_total_mouses(cls):
         return cls.count_mouse
+    def __str__(self):
+        return f"Id: {self.id_mouse}, Brand: {self.brand}, Type Input: {self.type_input}"
         
 class Teclados(DispositivoEntrada):
     count_keyboard = 0
@@ -22,4 +24,7 @@ class Teclados(DispositivoEntrada):
     @classmethod
     def get_total_keyboards(cls):
         return cls.count_keyboard
+    def __str__(self):
+        return f"Id: {self.id_keyboard}, Brand: {self.brand}, Type Input: {self.type_input}"
+        
         
