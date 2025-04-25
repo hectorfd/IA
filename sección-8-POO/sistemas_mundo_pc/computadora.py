@@ -32,6 +32,7 @@ class Computadora:
         teclado = Teclados(brand, type_input)
         self.list_keyboard.append(teclado)
         
+
     
     def __str__(self):
         return f"Id: {self.id_computadora}, Name: {self.name}"
