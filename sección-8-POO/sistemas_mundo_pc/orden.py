@@ -12,13 +12,14 @@ class Orden:
         computadora = Computadora(name)
         self.list_computadoras.append(computadora)
         
-    # mostrar computadoras
+    # mostrar computadora con detalles de teclado, raton y monitor
     def show_computadoras(self):
         for computadora in self.list_computadoras:
             print(computadora)
     
     def __str__(self):
-        computadoras_str = "\n".join(str(computadora) for computadora in self.list_computadoras)
-        return f"Id: {self.id_orden},\n List: {computadoras_str}"
-        
-        
+        orden_info = f"Orden #{self.id_orden}:\n"
+        for computadora in self.list_computadoras:
+            orden_info += f"- {computadora}\n"  # Llama a __str__ de Computadora
+        orden_info += f"Total de computadoras: {len(self.list_computadoras)}"
+        return orden_info

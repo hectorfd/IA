@@ -1,6 +1,6 @@
 from monitor import Monitor
-from dispositivos_entrada import Ratones
-from dispositivos_entrada import Teclados
+from dispositivos_entrada import Raton
+from dispositivos_entrada import Teclado
 
 class Computadora:
     count_computadora = 0
@@ -24,16 +24,34 @@ class Computadora:
         
     # agregacion raton
     def add_raton(self, brand, type_input):
-        raton = Ratones(brand, type_input)
+        raton = Raton(brand, type_input)
         self.list_mouse.append(raton)
         
     # agregacion teclado
     def add_teclado(self, brand, type_input):
-        teclado = Teclados(brand, type_input)
+        teclado = Teclado(brand, type_input)
         self.list_keyboard.append(teclado)
         
 
     
     def __str__(self):
-        return f"Id: {self.id_computadora}, Name: {self.name}"
+        # Info básica de la computadora
+        info = f"Id: {self.id_computadora}, Name: {self.name}\n"
+        
+        # Monitores
+        info += "  Monitores:\n"
+        for monitor in self.list_monitor:
+            info += f"    - {monitor}\n"
+        
+        # Ratones
+        info += "  Ratones:\n"
+        for raton in self.list_mouse:
+            info += f"    - {raton}\n"
+        
+        # Teclados
+        info += "  Teclados:\n"
+        for teclado in self.list_keyboard:
+            info += f"    - {teclado}\n"
+        
+        return info
         
