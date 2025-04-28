@@ -80,3 +80,24 @@ class ClienteDAO:
             if conexion is not None:
                 cursor.close()
                 Conexion.liberar_conexion(conexion)
+                
+                
+                
+    @classmethod
+    def eliminar(cls, cliente):
+        conexion = None
+        try:
+            conexion = Conexion.obtener_conexion()
+            cursor = conexion.cursor()
+            valores = (cliente.id,)
+            cursor.execute(cls.ELIMINAR, valores)
+            conexion.commit()
+            return cursor.rowcount
+            
+        except Exception as e:
+            print(f'Ocurrio un error al eliminar clientes: {e}')
+            raise
+        finally:
+            if conexion is not None:
+                cursor.close()
+                Conexion.liberar_conexion(conexion)
