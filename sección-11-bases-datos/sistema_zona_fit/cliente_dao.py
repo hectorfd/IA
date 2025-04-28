@@ -60,3 +60,23 @@ class ClienteDAO:
             if conexion is not None:
                 cursor.close()
                 Conexion.liberar_conexion(conexion)
+                
+                
+    @classmethod
+    def actualizar(cls, cliente):
+        conexion = None
+        try:
+            conexion = Conexion.obtener_conexion()
+            cursor = conexion.cursor()
+            valores = (cliente.nombre, cliente.apellido, cliente.membresia, cliente.id)
+            cursor.execute(cls.ACTUALIZAR, valores)
+            conexion.commit()
+            return cursor.rowcount
+            
+        except Exception as e:
+            print(f'Ocurrio un error al actualizar clientes: {e}')
+            raise
+        finally:
+            if conexion is not None:
+                cursor.close()
+                Conexion.liberar_conexion(conexion)
