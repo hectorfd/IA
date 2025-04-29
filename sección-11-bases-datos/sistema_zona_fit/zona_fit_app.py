@@ -22,6 +22,14 @@ while option != 5:
         cliente = Cliente(nombre = nombre_var, apellido = apellido_var, membresia = membresia_var)
         ClienteDAO.insertar(cliente)
         print('Cliente insertado correctamente')
+    elif option == 3:
+        id_var = int(input('Ingrese el id: '))
+        nombre_var = input('Ingrese el nombre: ')
+        apellido_var = input('Ingrese el apellido: ')
+        membresia_var = int(input('Ingrese la membresia: '))
+        cliente = Cliente(id = id_var, nombre = nombre_var, apellido = apellido_var, membresia = membresia_var)
+        ClienteDAO.actualizar(cliente)
+        print('Cliente actualizado correctamente')
         
     
         
