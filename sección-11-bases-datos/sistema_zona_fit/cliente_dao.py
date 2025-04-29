@@ -4,10 +4,10 @@ from conexion import Conexion
 # DAO se usa para que no uses directamente sentencias SQL como SELECT, INSERT, UPDATE, DELETE en nuestra logica de negocio
 # DAO permite centralizar las operaciones de la base de datos, de esa forma cuando cambies de base de datos por ejemplo de mysql a postgres o oracle, solo tendras que cambiar el DAO de la capa de datos
 class ClienteDAO:
-    SELECCIONAR = 'SELECT * FROM clientes ORDER id'
-    INSERTAR = 'INSERT INTO clientes (nombre, apellido, membresia) VALUES (%s, %s, %s)'
-    ACTUALIZAR = 'UPDATE clientes SET nombre = %s, apellido = %s, membresia = %s WHERE id = %s'
-    ELIMINAR = 'DELETE FROM clientes WHERE id = %s'
+    SELECCIONAR = 'SELECT * FROM cliente ORDER BY id'
+    INSERTAR = 'INSERT INTO cliente (nombre, apellido, membresia) VALUES (%s, %s, %s)'
+    ACTUALIZAR = 'UPDATE cliente SET nombre = %s, apellido = %s, membresia = %s WHERE id = %s'
+    ELIMINAR = 'DELETE FROM cliente WHERE id = %s'
     
     @classmethod
     # este es el cliente DAO para seleccionar todos los clientes

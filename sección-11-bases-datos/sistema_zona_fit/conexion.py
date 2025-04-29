@@ -41,9 +41,10 @@ class Conexion:
     @classmethod
     def obtener_conexion(cls):
         try:
+            cls._pool = cls.obtener_pool()  # Asegura que el pool esté creado
             return cls._pool.get_connection()# get_connection es un metodo de mysql
-        except Erro as e:
-            print(f'Error al otener la conexión: {e}')
+        except Error as e:
+            print(f'Error al obtener la conexión: {e}')
             raise
     
     @classmethod
