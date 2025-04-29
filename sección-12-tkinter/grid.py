@@ -15,7 +15,7 @@ boton5 = ttk.Button(ventana, text = 'boton5')
 boton6 = ttk.Button(ventana, text = 'boton6')
 
 # grids para organizar los botones
-boton1.grid(row = 0, column = 0)
+boton1.grid(row = 0, column = 0, sticky=tk.NSEW, padx=20, pady=20)# esto ocupa todoel espacio ampliando el boton
 boton2.grid(row = 0, column = 1)
 boton3.grid(row = 0, column = 2)
 
