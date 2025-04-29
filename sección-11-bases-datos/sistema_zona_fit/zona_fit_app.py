@@ -1,4 +1,5 @@
 from cliente_dao import ClienteDAO
+from cliente import Cliente
 print('Zona Fit')
 option = None
 while option != 5:
@@ -14,5 +15,13 @@ while option != 5:
         print('Listado de Clientes: ')
         for cliente in clientes:
             print(cliente)
+    elif option == 2:
+        nombre_var = input('Ingrese el nombre: ')
+        apellido_var = input('Ingrese el apellido: ')
+        membresia_var = int(input('Ingrese la membresia: '))
+        cliente = Cliente(nombre = nombre_var, apellido = apellido_var, membresia = membresia_var)
+        ClienteDAO.insertar(cliente)
+        print('Cliente insertado correctamente')
+        
     
         
